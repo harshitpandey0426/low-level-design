@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public interface DriverMatchingStrategy {
+public interface DriverMatchingStrategy {
+    Driver matchDriver(TripMetaData pTripMetaData);
 }

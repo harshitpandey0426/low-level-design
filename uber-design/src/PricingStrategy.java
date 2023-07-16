@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class PricingStrategy {
+public interface PricingStrategy {
+
+    public double calculatePrice(TripMetaData pTripMetaData);
 }
