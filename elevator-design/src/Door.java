@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public enum Door {
+public enum Door {
+    Door1,
+    Door2
 }
