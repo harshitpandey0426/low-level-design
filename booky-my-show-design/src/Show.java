@@ -6,6 +6,14 @@ public class Show {
     Movie movie;
     Screen screen;
     int showStartTime;
+
+    public Show(int showId, Movie movie, Screen screen, int showStartTime) {
+        this.showId = showId;
+        this.movie = movie;
+        this.screen = screen;
+        this.showStartTime = showStartTime;
+    }
+
     List<Integer> bookedSeatIds = new ArrayList<>();
 
     //getters and setters

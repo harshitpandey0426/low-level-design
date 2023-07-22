@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -6,13 +7,13 @@ public class TheatreController {
     Map<City, List<Theatre>> locationVsTheatre;
     List<Theatre> allTheatre;
 
-    public TheatreController(Map<City, List<Theatre>> locationVsTheatre, List<Theatre> allTheatre) {
-        this.locationVsTheatre = locationVsTheatre;
-        this.allTheatre = allTheatre;
+    public TheatreController() {
+        this.locationVsTheatre = new HashMap<>();
+        this.allTheatre = new ArrayList<>();
     }
     public void addTheatre(City city, Theatre theatre){
         allTheatre.add(theatre);
-        List<Theatre> allTheatreInCity = locationVsTheatre.get(city);
+        List<Theatre> allTheatreInCity = locationVsTheatre.getOrDefault(city, new ArrayList<>());
         allTheatreInCity.add(theatre);
         locationVsTheatre.put(city,allTheatreInCity);
     }

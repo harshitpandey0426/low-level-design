@@ -4,6 +4,11 @@ public class Movie {
 //    Address address;
     int durationInMinutes;
 
+    public Movie(int movieId, String movieName, int durationInMinutes) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.durationInMinutes = durationInMinutes;
+    }
     //getters and setters
 
 

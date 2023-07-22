@@ -7,6 +7,10 @@ public class Theatre {
     List<Screen> screens = new ArrayList<>();
     List<Show>shows = new ArrayList<>();
 
+    public Theatre(int theatreId, City city) {
+        this.theatreId = theatreId;
+        this.city = city;
+    }
     //getters and setters
 
 
