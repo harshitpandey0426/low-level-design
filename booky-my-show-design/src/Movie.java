@@ -10,8 +10,6 @@ public class Movie {
         this.durationInMinutes = durationInMinutes;
     }
     //getters and setters
-
-
     public int getMovieId() {
         return movieId;
     }

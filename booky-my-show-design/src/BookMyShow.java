@@ -14,6 +14,42 @@ public class BookMyShow {
         BookMyShow bookMyShow = new BookMyShow();
 
         bookMyShow.initialize();
+        bookMyShow.createBooking(City.Bangalore, "Bahubali");
+        //user2
+        bookMyShow.createBooking(City.Bangalore, "Bahubali");
+
+
+
+    }
+    private void createBooking(City userCity, String desiredMovie){
+        Movie movie = movieController.getMovieByName(desiredMovie);
+
+        List<Show> allshows = theatreController.getAllShow(userCity,movie);
+        Show interestedShow = allshows.get(0);
+
+        int seatNumber = 35;
+        List<Integer> bookedSeats = interestedShow.getBookedSeatIds();
+        if(!bookedSeats.contains(seatNumber)){
+            bookedSeats.add(seatNumber);
+            //startPayment
+            Booking booking = new Booking();
+            List<Seat> myBookedSeats = new ArrayList<>();
+            //creating booking object here
+            //finding out seat object from seat numbers and create a list of seats
+            for(Seat screenSeat : interestedShow.getScreen().getSeats()) {
+                if(screenSeat.getSeatId() == seatNumber) {
+                    myBookedSeats.add(screenSeat);
+                }
+            }
+            booking.setBookedSeats(myBookedSeats);
+            booking.setShow(interestedShow);
+        } else {
+            //throw exception
+            System.out.println("seat already booked, try again");
+            return;
+        }
+
+        System.out.println("BOOKING SUCCESSFUL");
 
     }
     private void initialize() {
