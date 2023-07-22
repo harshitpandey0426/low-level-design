@@ -22,13 +22,18 @@ public class BookMyShow {
 
     }
     private void createBooking(City userCity, String desiredMovie){
+        //get movie object
         Movie movie = movieController.getMovieByName(desiredMovie);
 
-        List<Show> allshows = theatreController.getAllShow(userCity,movie);
-        Show interestedShow = allshows.get(0);
+        //get shows of this movie object
+        List<Show> allShow = theatreController.getAllShow(userCity,movie);
+        //taking hardcoded first show
+        Show interestedShow = allShow.get(0);
 
         int seatNumber = 35;
         List<Integer> bookedSeats = interestedShow.getBookedSeatIds();
+
+        //check if this show is booked or not
         if(!bookedSeats.contains(seatNumber)){
             bookedSeats.add(seatNumber);
             //startPayment
@@ -82,10 +87,8 @@ public class BookMyShow {
         pvrTheatre.setScreens(createScreens());
 
         //creating shows
-        List<Show> inoxShows = createShows(inoxTheatre);
-        inoxTheatre.setShows(inoxShows);
-        List<Show> pvrShows = createShows(pvrTheatre);
-        pvrTheatre.setShows(pvrShows);
+        inoxTheatre.setShows(createShows(inoxTheatre));
+        pvrTheatre.setShows(createShows(pvrTheatre));
 
         theatreController.addTheatre(City.Mumbai,inoxTheatre);
         theatreController.addTheatre(City.Bangalore,pvrTheatre);

@@ -31,4 +31,6 @@ public class TheatreController {
         return allRequiredShow;
     }
 
+    //remove theatre
+
 }
