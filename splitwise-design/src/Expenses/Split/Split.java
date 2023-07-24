@@ -1,5 +1,5 @@
 package Expenses.Split;
-
+import User.User;
 public class Split {
 
     User user;

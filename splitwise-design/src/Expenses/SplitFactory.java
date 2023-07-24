@@ -1,5 +1,10 @@
 package Expenses;
 
+import Expenses.Split.EqualExpenseSplit;
+import Expenses.Split.ExpenseSplit;
+import Expenses.Split.PercentageExpenseSplit;
+import Expenses.Split.UnequalExpenseSplit;
+
 public class SplitFactory {
 
     public static ExpenseSplit getSplitObject(ExpenseSplitType splitType) {

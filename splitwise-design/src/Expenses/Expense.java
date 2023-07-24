@@ -1,6 +1,10 @@
 package Expenses;
 
+import Expenses.Split.Split;
+
 import java.util.ArrayList;
+import java.util.List;
+import User.User;
 
 public class Expense {
     String expenseId;

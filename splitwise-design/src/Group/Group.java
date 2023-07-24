@@ -3,7 +3,8 @@ package Group;
 import Expenses.Expense;
 import Expenses.ExpenseController;
 import Expenses.ExpenseSplitType;
-
+import Expenses.Split.Split;
+import User.User;
 import java.util.ArrayList;
 import java.util.List;
 
