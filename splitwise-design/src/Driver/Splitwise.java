@@ -24,7 +24,7 @@ public class Splitwise {
     }
 
     public void demo(){
-
+        //create users and group
         setupUserAndGroup();
 
         //Step1: add members to the group
@@ -42,6 +42,7 @@ public class Splitwise {
         splits.add(split3);
         group.createExpense("Exp1001", "Breakfast", 900, splits, ExpenseSplitType.EQUAL, userController.getUser("U1001"));
 
+        // to print current status
         for(User user : userController.getAllUsers()) {
             balanceSheetController.showBalanceSheetOfUser(user);
         }
