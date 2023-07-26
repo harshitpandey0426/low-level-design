@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class UserBucketCreater {
+    Map<Integer,LeakyBucket> bucket;
+    UserBucketCreater(int id){
+        bucket = new HashMap<>();
+        bucket.put(id, new LeakyBucket(10)); //hard coded capacity here
+    }
+
+    void accessApplication(int id){
+        if(bucket.get(id).grantAccess()){ // get this from redis now if we have kept queue in redis
+            System.out.println(Thread.currentThread().getName() + " Access the application");
+        }
+        else{
+            System.out.println("Error Status 429 too many requests");
+        }
+    }
+    void processRequest(int id){ //this can be called by application to process request and free space from queue
+        LeakyBucket leakyBucket = bucket.get(id);
+        leakyBucket.queue.poll();
+    }
+}
+
