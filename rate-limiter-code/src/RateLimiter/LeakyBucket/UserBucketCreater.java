@@ -1,3 +1,5 @@
+package RateLimiter.LeakyBucket;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +12,7 @@ public class UserBucketCreater {
 
     void accessApplication(int id){
         if(bucket.get(id).grantAccess()){ // get this from redis now if we have kept queue in redis
+            processRequest(id);
             System.out.println(Thread.currentThread().getName() + " Access the application");
         }
         else{

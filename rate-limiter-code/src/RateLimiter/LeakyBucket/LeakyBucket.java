@@ -1,7 +1,11 @@
+package RateLimiter.LeakyBucket;
+
+import RateLimiter.RateLimiter;
+
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
-public class LeakyBucket implements RateLimiter{
+public class LeakyBucket implements RateLimiter {
     BlockingQueue <Integer> queue; // keep this in redis for distributed env for global access
     public LeakyBucket(int capacity){
         this.queue = new LinkedBlockingDeque<>(capacity);
