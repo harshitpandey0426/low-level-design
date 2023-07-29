@@ -9,6 +9,6 @@ public class ErrorLogger extends AbstractLogger {
     }
     @Override
     protected void display(String msg, LogSubject loggerSubject) {
-        loggerSubject.notifyAllObserver(1,"DEBUG : "+msg);
+        loggerSubject.notifyAllObserver(2,"ERROR : "+msg);
     }
 }

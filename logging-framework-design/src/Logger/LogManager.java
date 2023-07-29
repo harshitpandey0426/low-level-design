@@ -29,6 +29,7 @@ public class LogManager {
 
         FileLogger fileLogger = new FileLogger();
         logSubject.addObserver(2,fileLogger);
+        logSubject.addObserver(3,fileLogger);
 
         return logSubject;
     }

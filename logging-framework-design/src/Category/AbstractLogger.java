@@ -12,7 +12,7 @@ public abstract class AbstractLogger {
         this.nextLevelLogger = nextLevelLogger;
     }
     public void logMessage(int level, String msg, LogSubject loggerSubject){
-        if(this.level==level){
+        if(this.level <= level){
             display(msg, loggerSubject);
         }
 
