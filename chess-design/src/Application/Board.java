@@ -27,8 +27,8 @@ public class Board {
         }
         return cell;
     }
-    public boolean move(Piece piece,Position desiredCell){
-        Position currentPosition = piece.pieceVsPosition.get(piece);
-        return piece.isValidMove(desiredCell,currentPosition);
-    }
+//    public boolean move(Piece piece,Position desiredCell){
+//        Position currentPosition = piece.pieceVsPosition.get(piece);
+//        return piece.isValidMove(desiredCell,currentPosition);
+//    }
 }

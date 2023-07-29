@@ -1,5 +1,6 @@
 package Piece;
 
+import Application.Board;
 import Application.Position;
 
 public class Knight extends Piece{
@@ -8,7 +9,8 @@ public class Knight extends Piece{
     }
 
     @Override
-    public boolean isValidMove(Position position) {
+    public boolean isValidMove(Position desiredPosition, Position currentPosition, Board board) {
         return false;
     }
+
 }

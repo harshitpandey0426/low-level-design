@@ -1,5 +1,6 @@
 package Piece;
 
+import Application.Board;
 import Application.Position;
 
 import java.util.ArrayList;
@@ -9,6 +10,12 @@ public class Rook extends Piece{
     public Rook(boolean isWhite) {
         super(isWhite);
     }
+
+    @Override
+    public boolean isValidMove(Position desiredPosition, Position currentPosition, Board board) {
+        return false;
+    }
+
     public boolean isValidMove(Position desiredPosition, Position currentPosition){
         int cx= desiredPosition.x;
         int cy = desiredPosition.y;
