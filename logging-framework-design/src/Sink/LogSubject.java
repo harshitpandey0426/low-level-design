@@ -23,10 +23,14 @@ public class LogSubject implements LogObservable {
 
     @Override
     public void notifyAllObserver(int level, String message) {
-        for( Map.Entry<Integer, List<LogObserver>> logObserver : logObservers.entrySet()){
-            if (logObserver.getKey() == level){
-                logObserver.getValue().forEach(observer -> observer.log(message));
-            }
+        List <LogObserver> allObservers = logObservers.get(level);
+        for(LogObserver observers : allObservers){
+            observers.log(message);
         }
+//        for( Map.Entry<Integer, List<LogObserver>> logObserver : logObservers.entrySet()){
+//            if (logObserver.getKey() == level){
+//                logObserver.getValue().forEach(observer -> observer.log(message));
+//            }
+//        }
     }
 }
