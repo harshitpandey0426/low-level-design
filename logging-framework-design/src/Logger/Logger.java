@@ -1,7 +1,12 @@
+package Logger;
+
+import Category.AbstractLogger;
+import Sink.LogSubject;
+
 public class Logger {
     private static Logger logger;
-
     private static AbstractLogger chainOfLogger;
+    private volatile static LogSubject loggerSubject;
     private Logger(){
 
     }
@@ -10,6 +15,7 @@ public class Logger {
         if(logger==null){
             logger = new Logger();
             chainOfLogger = logManager.buildChainOfLogger();
+            loggerSubject = logManager.addObservers();
         }
         return logger;
     }
@@ -27,7 +33,7 @@ public class Logger {
     }
 
     private void createLog(int level, String message){
-        chainOfLogger.logMessage(level, message);
+        chainOfLogger.logMessage(level, message, loggerSubject);
     }
 
 }
