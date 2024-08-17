@@ -1,9 +1,0 @@
-For a low-level design of a cricket information system like Cricinfo, several design patterns can be applied to achieve modularity, flexibility, and maintainability. Some commonly used design patterns in such systems are:
-
-Observer Pattern: This pattern can be used to implement the live score update feature. Various components of the system (e.g., scorecard, commentary, statistics) can register as observers to receive updates whenever the score or other game-related information changes.
-
-Singleton Pattern: The singleton pattern can be used to ensure that there is only one instance of certain classes in the system, like the Scoreboard or the MatchManager, to avoid data inconsistencies.
-
-Factory Pattern: The factory pattern can be used to create different types of cricket objects (e.g., players, teams, matches) without exposing the instantiation logic. It can also be used to create various parsers for different data formats.
-
-Strategy Pattern: The strategy pattern can be used to implement different algorithms for calculating player statistics, like batting average, bowling strike rate, etc. The strategy can be changed dynamically based on the requirement.
