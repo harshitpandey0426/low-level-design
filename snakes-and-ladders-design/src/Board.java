@@ -33,21 +33,11 @@ public class Board {
             if(point1>point2){
                 snakesCount--;
                 this.jumpMap.put(point1,point2);
-//                Jump jump = new Jump();
-//                jump.start = point1;
-//                jump.end = point2;
-//                Cell cell = updateCell(point1);
-//                cell.jump=jump;
 
             }
             else if (point2>point1){
                 ladderCount--;
                 this.jumpMap.put(point1,point2);
-//                Jump jump = new Jump();
-//                jump.start = point1;
-//                jump.end = point2;
-//                Cell cell = updateCell(point1);
-//                cell.jump=jump;
             }
         }
     }
